@@ -8,6 +8,7 @@ class IndexManager() {
     fun isEmpty () : Boolean = map.isEmpty()
 
     fun map(word: String, line: String, pos : Int) {
+        println(map.keys.toList().sorted())
         val tuple = Pair(line, pos)
 
         if(map.contains(word)) {
@@ -18,7 +19,7 @@ class IndexManager() {
         }
     }
 
-    fun occurrencesOfWord(word: String) : MutableList<Pair<String,Int>>?= map[word]
+    fun occurrencesOfWord(word: String) : MutableList< Pair<String,Int> >?= map[word]
 
     fun sortedWords() : List<String> = map.keys.toList().sorted()
 }
