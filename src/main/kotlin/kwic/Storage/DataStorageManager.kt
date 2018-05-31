@@ -1,4 +1,4 @@
-package kwic
+package kwic.Storage
 
 interface  DataStorageManager{
 
@@ -7,4 +7,6 @@ interface  DataStorageManager{
     fun line(idx : Int): String
 
     fun length():Int
+
+    fun name() : String
 }

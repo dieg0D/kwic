@@ -2,7 +2,7 @@ package kwic
 
 import  kotlin.collections.*
 
-class IndexManager() {
+class IndexManager {
     private val map : HashMap<String,MutableList<Pair<String,Int>>> = HashMap()
 
     fun isEmpty () : Boolean = map.isEmpty()
@@ -18,7 +18,7 @@ class IndexManager() {
         }
     }
 
-    fun occurrencesOfWord(word: String) : MutableList<Pair<String,Int>>?= map[word]
+    fun occurrencesOfWord(word: String) : MutableList<Pair<String, Int>>? = map[word]
 
     fun sortedWords() : List<String> = map.keys.toList().sorted()
 }

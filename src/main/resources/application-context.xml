@@ -1,0 +1,55 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+
+    <bean id="FileBasedStoreManager"  class="kwic.Storage.FileBasedStorageManager"/>
+    <bean id="DBLPStoreManager"  class="kwic.Storage.DBLPStorageManager"/>
+    <bean id="DataBasetoreManager"  class="kwic.Storage.DataBaseStoreManager"/>
+
+
+
+    <bean id = "ShellExportManager" class="kwic.Export.ShellExportManager"/>
+    <bean id = "TxtExportManager" class="kwic.Export.TxtExportManager"/>
+    <bean id = "HTMLExportManager" class="kwic.Export.HTMLExportManager"/>
+    <bean id="PDFExportManager"  class="kwic.Export.PDFExportManager"/>
+
+    <bean id = "WordShiftKWAC" class="kwic.Shift.WordShiftKWAC"/>
+    <bean id = "WordShiftKWIC" class="kwic.Shift.WordShiftKWIC"/>
+    <bean id = "WordShiftKWOC" class="kwic.Shift.WordShiftKWOC"/>
+
+
+
+    <bean id="listStoreManagers" class="java.util.ArrayList">
+        <constructor-arg>
+            <list>
+                <ref bean="FileBasedStoreManager"/>
+                <ref bean="DBLPStoreManager"/>
+                <ref bean="DataBasetoreManager"/>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <bean id="listExportManagers" class="java.util.ArrayList">
+        <constructor-arg>
+            <list>
+                <ref bean="ShellExportManager"/>
+                <ref bean="TxtExportManager"/>
+                <ref bean="HTMLExportManager"/>
+                <ref bean="PDFExportManager"/>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <bean id="listWordShifters" class="java.util.ArrayList">
+        <constructor-arg>
+            <list>
+                <ref bean="WordShiftKWAC"/>
+                <ref bean="WordShiftKWIC"/>
+                <ref bean="WordShiftKWOC"/>
+            </list>
+        </constructor-arg>
+    </bean>
+</beans>
